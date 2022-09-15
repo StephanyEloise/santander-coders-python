@@ -14,7 +14,20 @@ Imagine que você queira imprimir "Aprovado(a), caso o estudante tenha média su
 
 nota = float(input('Informe a média do estudante: '))
 
-if nota >= 60:
+if nota >= 7:
     print('Aprovado(a)!')
+elif nota >= 5:
+    print('Recuperação')
 else:
     print('Reprovado.')
+
+
+media = 10
+presenca = 100
+
+if media >= 7 and presenca >= 70:
+    print('Aprovado!')
+else:
+    print('Reprovado')
+
+# else if = elif | && and
