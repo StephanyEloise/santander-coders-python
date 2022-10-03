@@ -116,3 +116,41 @@ você vai informar como a polícia o considera.
 
 
 """
+
+mora_perto = input('Mora perto da vítima? ').lower() == 'sim'
+trabalhou_com = input('Já trabalhou com a vítima? ').lower() == 'sim'
+telefonou_para = input('Telefonou para a vítima? ').lower() == 'sim'
+esteve_no_local = input('Esteve no local do crime? ').lower() == 'sim'
+devia_para = input('Devia para a vítima? ').lower() == 'sim'
+
+pontuacao_total = mora_perto + trabalhou_com + \
+    telefonou_para + esteve_no_local + devia_para
+
+if pontuacao_total == 5:
+    print('Assassino! 😱')
+elif pontuacao_total >= 3:
+    print('Cúmplice 😨')
+elif pontuacao_total == 2:
+    print('Suspeito 🧐')
+else:
+    print('Liberado 🙌')
+
+
+"""
+Questão 6.
+Faça uma função que recebe uma lista de números e retorna a soma dos elementos dessa lista.
+"""
+
+
+def somar_elementos(lista):
+    soma = 0
+    for elemento in lista:
+        soma += elemento
+
+    return soma
+
+
+lista_de_exemplo = [4, 6, 7, 5, 3]
+resultado = somar_elementos(lista_de_exemplo)
+
+print('Soma dos elementos da lista =', resultado)
