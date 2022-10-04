@@ -1,3 +1,5 @@
+from math import sqrt
+
 # Desafio // Exercício Santander Coders
 
 """
@@ -154,3 +156,24 @@ lista_de_exemplo = [4, 6, 7, 5, 3]
 resultado = somar_elementos(lista_de_exemplo)
 
 print('Soma dos elementos da lista =', resultado)
+
+
+"""
+
+Questão 7.
+Faça um programa que leia as coordenadas de 2 (dois) pontos em um plano cartesiano 2D: a
+coordenada x do primeiro ponto (x_1), a coordenada y do primeiro ponto (y_1), a coordenada x do
+segundo ponto (x_2) e a coordenada y do segundo ponto (y_2). Em seguida, calcule a distância
+euclidiana entre os pontos, utilizando a equação abaixo:
+𝑑 = (𝑥2 − 𝑥1)² + (𝑦2 − 𝑦1)²
+
+"""
+
+x1 = float(input('Coordenada x do primeiro ponto: '))
+y1 = float(input('Coordenada y do primeiro ponto: '))
+x2 = float(input('Coordenada x do segundo ponto: '))
+y2 = float(input('Coordenada y do segundo ponto: '))
+
+distancia = sqrt((x2 - x1)**2 + (y2 - y1)**2)
+
+print('Distância entre os pontos =', distancia)
