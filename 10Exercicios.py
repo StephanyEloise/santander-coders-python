@@ -177,3 +177,109 @@ y2 = float(input('Coordenada y do segundo ponto: '))
 distancia = sqrt((x2 - x1)**2 + (y2 - y1)**2)
 
 print('Distância entre os pontos =', distancia)
+
+"""
+
+Questão 8.
+Calcule a soma de mil termos dos inversos dos fatoriais: 1/(1!) + 1/(2!) + 1/(3!) + 1/(4!) + ...
+Dica: Use três variáveis:
+● um contador;
+● uma variável para soma;
+● e uma variável para os termos.
+Lembre-se de que 4! = 4 * *3 ** 2 * *1, que também é igual a 4 ** 3
+
+"""
+
+contador = 1
+soma = 0
+termo = 1
+
+while contador <= 1000:
+    termo = termo / contador
+    soma += termo
+    contador += 1
+
+print(soma)
+
+"""
+
+Questão 9.
+Crie (manualmente ou sorteando os números) uma lista de 10 números e
+imprima:
+1. uma lista com os 4 primeiros números;
+2. uma lista com os 5 últimos números;
+3. uma lista contendo apenas os elementos das posições pares;
+4. uma lista contendo apenas os elementos das posições ímpares;
+5. a lista inversa da lista sorteada (isto é, uma lista que começa com
+o último elemento da lista sorteada e termina com o primeiro);
+6. uma lista inversa dos 5 primeiros números;
+7. uma lista inversa dos 5 últimos números.
+
+"""
+
+lista = [5, 3, 9, 0, 1, 2, 6, 4, 7, 8]
+
+print('Lista inicial:', lista, '\n')
+
+print('Quatro primeiros elementos: ', lista[:4])
+print('Cinco últimos elementos: ', lista[-5:])
+print('Elementos nas posições pares: ', lista[::2])
+print('Elementos nas posições ímpares: ', lista[1::2])
+
+"""
+
+Questão 10.
+Na música, uma nota tem um tom (sua frequência, resultando em quão grave ou agudo é o
+som) e uma duração (por quanto tempo a nota soa). Neste problema, estamos interessados
+apenas na duração das notas.
+Marcos está dando os primeiros passos para ser um compositor de jingles. Ele está tendo alguns
+problemas, mas ao menos ele está criando melodias agradáveis e ritmos atrativos. Um jingle é
+dividido em uma sequência de compassos, e um compasso é formado de uma série de notas.
+A duração de uma nota é indicada pela sua forma. Neste problema, iremos utilizar letras
+maiúsculas para indicar a duração de uma nota
+
+A duração de um compasso é a soma da duração de suas notas. Nos jingles de Marcos, cada
+compasso tem a mesma duração. Como Marcos é apenas um iniciante, seu famoso professor
+Johann Sebastian III o ensinou que a duração de um compasso deve ser sempre 1.
+
+Por exemplo, Marcos escreveu uma composição contendo cinco compassos, dentre os quais
+quatro possuem a duração correta e um está errado.
+
+Marcos gosta de computadores assim como de música. Ele quer que você escreva um programa
+que determine, para cada uma de suas composições, quantos compassos possuem a duração
+correta e quais são os compassos com duração incorreta.
+
+"""
+
+duracao_da_nota = {
+    'W': 1,
+    'H': 1/2,
+    'Q': 1/4,
+    'E': 1/8,
+    'S': 1/16,
+    'T': 1/32,
+    'X': 1/64
+}
+
+composicao = '/HH/QQQQ/XXXTXTEQH/W/HW/'
+
+# O método .strip() elimina o caracter que você colocar entre os parênteses, caso ele esteja no início ou no final da string
+# O método .split() divide a string no caractere especificado entre os parênteses, gerando uma lista como resultado
+compassos = composicao.strip('/').split('/')
+
+qtd_corretos = 0
+incorretos = []
+
+for compasso in compassos:
+    duracao_compasso = 0
+    for nota in compasso:
+        duracao_compasso += duracao_da_nota[nota]
+
+    if duracao_compasso == 1:
+        qtd_corretos += 1
+    else:
+        incorretos.append(compasso)
+
+print('Qtd. de Corretos:', qtd_corretos)
+if len(incorretos) > 0:
+    print('Incorretos:', incorretos)
